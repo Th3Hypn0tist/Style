@@ -46,7 +46,13 @@
 .wg-button:disabled,
 .wg-input:disabled,
 .wg-select:disabled,
-[data-disabled="true"] {
+.wg-field[data-disabled="true"],
+.wg-panel[data-disabled="true"],
+.wg-row[data-disabled="true"],
+.wg-stack[data-disabled="true"],
+.wg-table[data-disabled="true"],
+.wg-badge[data-disabled="true"],
+.wg-status[data-disabled="true"] {
   opacity: var(--state-disabled-opacity);
 }
 
