@@ -46,3 +46,21 @@ Theme selection is explicit:
 If `data-theme` is absent, the current default is dark.
 
 See `Contracts/` for canonical boundaries.
+
+
+## Contract consumption
+
+Style is a visual implementation layer only.
+
+It may consume:
+
+```text
+WebGUI    -> .wg-* semantics and declared generic UI state vocabularies
+WebEngine -> .we-* semantics and declared subsystem state vocabularies
+```
+
+Style must not invent new shared class meanings or state/status/variant values. If a value such as `data-state="loading"` is not yet owned by an upstream contract, Style does not implement it yet.
+
+Shared state selectors must remain scoped to their owning presentation namespace. For example, WebGUI's `data-disabled` handling is applied only to declared `.wg-*` structures rather than globally to arbitrary host DOM.
+
+Dark and light themes implement the same semantic token names. Theme files change values only; structural selectors remain in the shared WebGUI/WebEngine CSS.
