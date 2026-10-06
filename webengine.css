@@ -1,6 +1,6 @@
 /*
- * WebEngine presentation contract.
- * Selectors in this file describe application composition, never domain meaning.
+ * WebEngine presentation implementation.
+ * Selectors and state values in this file must be declared by WebEngine contracts.
  */
 
 .we-shell {
@@ -64,10 +64,6 @@
 
 .we-projector-body {
   min-width: 0;
-}
-
-.we-projector[data-state="loading"] {
-  opacity: var(--state-loading-opacity);
 }
 
 .we-content {
