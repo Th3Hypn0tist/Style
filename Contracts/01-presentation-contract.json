@@ -4,19 +4,36 @@
     "WebEngine": ".we-*"
   },
   "stateEncoding": {
-    "preferred": [
+    "supportedCarriers": [
       "data-state",
       "data-status",
       "data-variant",
       "aria-current",
-      "native disabled state"
+      "native disabled state",
+      "data-disabled"
     ],
-    "rule": "state is represented by semantic attributes when a dedicated structural class is unnecessary"
+    "rule": "Style may visually implement only carriers and values explicitly defined by the owning upstream presentation or subsystem contract"
+  },
+  "upstreamOwnership": {
+    "WebGUI": [
+      ".wg-* primitive/component semantics",
+      "generic WebGUI state/status/variant vocabularies"
+    ],
+    "WebEngine": [
+      ".we-* application/composition semantics",
+      "WebEngine subsystem state/status/variant vocabularies"
+    ],
+    "Style": [
+      "visual implementation only"
+    ]
   },
   "rules": [
-    "Style consumes class and attribute semantics; it does not invent domain semantics",
+    "Style consumes class and attribute semantics; it does not invent them",
     "WebGUI owns primitive and component class semantics",
     "WebEngine owns application and composition class semantics",
-    "domains compose the public contracts instead of creating a parallel shared design system"
+    "Style must not style an undeclared shared .wg-* or .we-* selector",
+    "Style must not assign meaning to an undeclared shared state/status/variant value",
+    "domains compose the public contracts instead of creating a parallel shared design system",
+    "presentation state is never authorization authority"
   ]
 }
